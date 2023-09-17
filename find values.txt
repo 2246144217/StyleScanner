@@ -1,0 +1,55 @@
+/*
+      Name: Jinhong Lin
+      Course: Advanced Programming Techniques CS13A0
+       Programming Challenge #1, "Largest/Smallest Array Values"
+*/
+
+#include<iostream>
+using namespace std;
+void enterTheArray(int[],int);
+void findLargest(int[],int);
+void findSmallest(int[],int);
+
+int main()
+{
+	// this main is going to call other functions
+    const int SIZE=9;
+    int count,array[SIZE];
+    
+     enterTheArray(array,SIZE);
+     findLargest(array,SIZE);
+     findSmallest(array,SIZE);
+     return 0;
+}
+
+void enterTheArray(int array[],int SIZE)
+{    
+     // This function is going to let user enter the array and save it
+	 cout<<"Please enter 10 numbers into the  array :"<<endl;
+     for(int count=0;count<=SIZE;count++)
+         cin>>array[count];
+         cout<<endl;
+}
+
+void findLargest(int array[],int SIZE)
+{  
+    // This function is going to find the largest number
+	int largest=array[1];
+	for(int count=0;count<=SIZE;count++)
+{
+    if(array[count]>largest)
+       largest=array[count];
+} 
+    cout<<"The largest number is "<<largest<<endl;
+}
+
+void findSmallest(int array[],int SIZE){
+	// This function is going to find the smallest number
+	int smallest=array[1];
+	for(int count=0;count<=SIZE;count++)
+{
+	if(array[count]<=smallest)
+	   smallest=array[count];
+}
+    cout<<"The smallest number is "<<smallest;
+}
